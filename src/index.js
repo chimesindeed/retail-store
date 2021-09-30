@@ -1,17 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {TextboxBannersContextContainer} from './discounts-module/z-context-containers/TextboxBannersContextContainer'
+import {PricesContextContainer} from './discounts-module/z-context-containers/PricesContextContainer'
+import {FetchDataContainer} from './discounts-module/z-fetch-data-container/FetchDataContainer'
+import {App} from './app-entry/App';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <TextboxBannersContextContainer>
+    <PricesContextContainer>
+        <FetchDataContainer>
+        <App/>
+        </FetchDataContainer>
+    </PricesContextContainer>
+  </TextboxBannersContextContainer>,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
